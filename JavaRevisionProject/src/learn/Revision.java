@@ -6,6 +6,7 @@ import javax.swing.border.Border;
 public class Revision {
     public Revision() {
         JFrame frame = new JFrame("We are going to learn Java UI");
+        JPanel panel = new JPanel();
 
         frame.setSize(1000, 500);
 
@@ -23,11 +24,20 @@ public class Revision {
 //        JList list = new JList<>(week);
 //        frame.add(list);
 
-        JTextField textField = new JTextField("", 30);
-        textField.setSize(10, 30);
-        frame.add(textField);
+//        JTextField textField = new JTextField("", 30);
+//        textField.setSize(10, 30);
+//        frame.add(textField);
 
+        JTextArea textArea = new JTextArea(40, 20);
 
+        JDialog dialog = new JDialog();
+        dialog.setSize(100, 100);
+
+        dialog.add(textArea);
+
+        panel.add(dialog);
+
+        frame.add(panel);
         frame.setVisible(true);
     }
 

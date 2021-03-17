@@ -6,9 +6,8 @@ import java.net.ServerSocket;
 public class Server {
     public static void main(String[] args) throws Exception {
         ServerSocket serverSocket = new ServerSocket(8080);
+        
         Socket socket = serverSocket.accept();
-
-        System.out.println();
 
         DataInputStream input = new DataInputStream(socket.getInputStream());
         DataOutputStream output = new DataOutputStream(socket.getOutputStream());
