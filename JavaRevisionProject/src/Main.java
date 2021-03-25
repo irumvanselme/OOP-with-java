@@ -12,6 +12,10 @@ public class Main {
     JPanel tableContainer;
     DepartmentController controller = new DepartmentController();
 
+    public int createNewDepartment(String name, String description) throws SQLException {
+        return controller.create(name, description);
+    }
+
     public Main() throws SQLException {
         frame = new JFrame("A very department CRUD ...");
         frame.setSize(1000, 1000);
@@ -24,10 +28,25 @@ public class Main {
 
         JLabel descriptionLabel = new JLabel("Department description : ");
         JTextArea descriptionField = new JTextArea(30, 20);
+        
+        JButton createButton = new JButton("Create Department .... ");
+        createButton.addActionListener(e -> {
+            try {
+                if(createNewDepartment(nameField.getText(), descriptionField.getText()) == 1){
+                    System.out.println("We are going to retrieve the data ..... ");
+                }
+            } catch (SQLException throwable) {
+                throwable.printStackTrace();
+            }
+            nameField.setText("");
+            descriptionField.setText("");
+        });
+
         form.add(nameLabel);
         form.add(nameField);
         form.add(descriptionLabel);
         form.add(descriptionField);
+        form.add(createButton);
 
         tableContainer = new JPanel();
         tableContainer.setBorder(BorderFactory.createTitledBorder("All departments"));
@@ -46,9 +65,14 @@ public class Main {
 
         tableContainer.add(new JScrollPane(table));
 
+        ImageIcon imageIcon = new ImageIcon("logo.png");
+        frame.setIconImage(imageIcon.getImage());
+
         frame.add(form);
         frame.add(tableContainer);
+        frame.setResizable(false);
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void main(String[] args) throws SQLException {

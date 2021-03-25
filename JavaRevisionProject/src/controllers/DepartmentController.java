@@ -13,5 +13,9 @@ public class DepartmentController {
     public List<Department> getAllDepartments() throws SQLException {
         return dao.getAll();
     }
+
+    public int create(String name, String description) throws SQLException {
+        return dao.create(new Department(0, name, description));
+    }
 }
 
