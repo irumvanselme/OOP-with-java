@@ -7,6 +7,7 @@ import java.awt.event.FocusEvent;
 public class Login {
     private JPanel panel1;
     private JButton clickMeButton;
+    private JButton clickMeButton1;
 
     public Login() {
         clickMeButton.addActionListener(new ActionListener() {
@@ -28,5 +29,9 @@ public class Login {
                 System.out.println("Action Three");
             }
         });
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }

@@ -22,9 +22,15 @@ public class Main {
         frame.setLayout(new GridLayout(2,1));
 
         form = new JPanel();
+        form.setLayout(null);
         form.setBorder(BorderFactory.createTitledBorder("Create new Department"));
         JLabel nameLabel = new JLabel("Department name : ");
+        nameLabel.setBounds(120, 120, 219,219);
+        nameLabel.setBackground(Color.red);
         JTextField nameField = new JTextField("", 20);
+        JPanel nameContainer = new JPanel();
+        nameContainer.add(nameLabel);
+        nameContainer.add(nameField);
 
         JLabel descriptionLabel = new JLabel("Department description : ");
         JTextArea descriptionField = new JTextArea(30, 20);
@@ -42,8 +48,7 @@ public class Main {
             descriptionField.setText("");
         });
 
-        form.add(nameLabel);
-        form.add(nameField);
+        form.add(nameContainer);
         form.add(descriptionLabel);
         form.add(descriptionField);
         form.add(createButton);
@@ -65,7 +70,7 @@ public class Main {
 
         tableContainer.add(new JScrollPane(table));
 
-        ImageIcon imageIcon = new ImageIcon("logo.png");
+        ImageIcon imageIcon = new ImageIcon("C:\\Users\\DELL\\Documents\\java\\code\\JavaRevisionProject\\src\\logo.png");
         frame.setIconImage(imageIcon.getImage());
 
         frame.add(form);

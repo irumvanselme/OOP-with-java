@@ -33,7 +33,6 @@ public class MenuDemo {
         file = new JMenu("File");
 
         JMenuItem newFile = new JMenuItem("New ");
-        newFile.setIcon(new ImageIcon(""));
         newFile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -70,6 +69,7 @@ public class MenuDemo {
         menuBar.add(help);
 
         frame.setJMenuBar(menuBar);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setVisible(true);
     }
