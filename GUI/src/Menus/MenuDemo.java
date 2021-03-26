@@ -13,17 +13,6 @@ public class MenuDemo {
         init();
     }
 
-    protected ImageIcon createImageIcon(String path,
-                                        String description) {
-        java.net.URL imgURL = getClass().getResource(path);
-        if (imgURL != null) {
-            return new ImageIcon(imgURL, description);
-        } else {
-            System.err.println("Couldn't find file: " + path);
-            return null;
-        }
-    }
-
     private void init(){
         frame = new JFrame("Menu bar");
         frame.setSize(1000, 1000);
@@ -48,7 +37,6 @@ public class MenuDemo {
         open.add(new JMenuItem("Hidden"));
         open.add(new JMenuItem("Old"));
         file.add(open);
-
 
         file.add(new JMenuItem("Settings "));
         JMenuItem exit = new JMenuItem("Exit");
