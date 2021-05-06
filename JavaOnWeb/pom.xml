@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>Serverlets</artifactId>
+    <artifactId>JavaOnWeb</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Serverlets</name>
+    <name>JavaOnWeb</name>
     <packaging>war</packaging>
 
     <properties>

@@ -1,3 +1,5 @@
+package src;
+
 public class GenericDemo {
     public static void main(String[] args) {
         Person<Integer, String> p1 = new Person<>(3, "Anselme", 4);

@@ -1,3 +1,5 @@
+package src;
+
 public class Person<MyType1, MyType2> {
     public MyType1 age;
     public MyType2 name;
