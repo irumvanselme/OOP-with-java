@@ -16,8 +16,11 @@ public class DbConnection {
                 System.exit(0);
             }
         }catch (Exception e){
+            System.out.println("Failed to connect to database in the catch");
+            System.exit(0);
             e.printStackTrace();
         }
+
         return connection;
     }
 }
