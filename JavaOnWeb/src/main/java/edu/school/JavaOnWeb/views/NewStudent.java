@@ -1,4 +1,4 @@
-package com.example.JavaOnWeb.views;
+package edu.school.JavaOnWeb.views;
 
 import java.io.*;
 import javax.servlet.RequestDispatcher;

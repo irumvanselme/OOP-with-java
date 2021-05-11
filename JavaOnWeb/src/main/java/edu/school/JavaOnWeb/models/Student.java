@@ -1,12 +1,12 @@
-package com.example.JavaOnWeb.models;
+package edu.school.JavaOnWeb.models;
 
 public class Student {
+    private int id;
     private String firstName;
     private String lastName;
     private String gender;
     private String email;
     private String year;
-
     private String  className;
 
     public Student(){}
@@ -18,6 +18,14 @@ public class Student {
         this.email = email;
         this.year = year;
         this.className = className;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {

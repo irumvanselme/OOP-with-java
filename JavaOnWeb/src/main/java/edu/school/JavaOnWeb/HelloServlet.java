@@ -1,4 +1,4 @@
-package com.example.JavaOnWeb;
+package edu.school.JavaOnWeb;
 
 import java.io.*;
 import javax.servlet.RequestDispatcher;
