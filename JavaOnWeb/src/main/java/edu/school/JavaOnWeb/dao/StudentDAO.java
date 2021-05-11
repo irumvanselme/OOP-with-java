@@ -21,27 +21,45 @@ public class StudentDAO {
     }
 
     public List<Student> getAll() throws SQLException {
-        List<Student> departmentList = new ArrayList<>();
+        List<Student> students = new ArrayList<>();
 
         Statement statement = connection.createStatement();
 
         ResultSet set = statement.executeQuery("SELECT * FROM students");
 
         while (set.next()) {
-            departmentList.add(new Student(
+            Student student = new Student(
                     set.getString("first_name"),
                     set.getString("last_name"),
                     set.getString("gender"),
                     set.getString("email"),
                     set.getString("year"),
                     set.getString("class")
-            ));
+            );
+            student.setId(set.getInt("id"));
+            students.add(student);
         }
 
         statement.close();
         disconnect();
 
-        return departmentList;
+        return students;
+    }
+
+    public Student show(int id) throws SQLException {
+        Student department = null;
+
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM students where id = ?");
+        statement.setInt(1, id);
+
+        ResultSet set = statement.executeQuery();
+
+        while (set.next()) {
+            department = new Student(set.getString("first_name"), set.getString("last_name"), set.getString("gender"), set.getString("email"), set.getString("year"), set.getString("class"));
+            department.setId(set.getInt("id"));
+        }
+
+        return department;
     }
 
     public int create(Student student) throws SQLException {
@@ -87,6 +105,4 @@ public class StudentDAO {
 
         return rowDeleted;
     }
-
-
 }
