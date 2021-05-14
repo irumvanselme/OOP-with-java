@@ -96,12 +96,11 @@ public class StudentDAO {
     }
 
     public boolean delete(Student student) throws SQLException {
-        String sql = "DELETE FROM student where id = ?";
+        String sql = "DELETE FROM students where id = ?";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setInt(1, student.getId());
         boolean rowDeleted = statement.executeUpdate() > 0;
         statement.close();
-        disconnect();
 
         return rowDeleted;
     }

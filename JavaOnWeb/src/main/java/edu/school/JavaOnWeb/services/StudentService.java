@@ -2,6 +2,7 @@ package edu.school.JavaOnWeb.services;
 
 import edu.school.JavaOnWeb.controllers.StudentController;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,19 +13,41 @@ import java.sql.SQLException;
 
 @WebServlet(name = "Students", value = "/students")
 public class StudentService extends HttpServlet {
+    private final StudentController controller = new StudentController();
+
+    public StudentService() throws SQLException {
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+        int studentId = Integer.parseInt(request.getParameter("id"));
 
-        switch (action){
+        switch (action) {
             case "DELETE":
-                response.getOutputStream().println("You decided to delete");
+                boolean result = false;
+                try {
+                    result = controller.delete(studentId);
+                } catch (SQLException throwable) {
+                    throwable.printStackTrace();
+                }
+                if(result) response.sendRedirect("all-students");
+                else response.getOutputStream().println("<h1>Failed to delete a student</h1>");
                 break;
             case "REDIRECT_TO_UPDATE":
-                response.getOutputStream().println("You decided to update a record");
+                try {
+                    request.setAttribute("student", controller.getById(studentId));
+                } catch (SQLException throwable) {
+                    throwable.printStackTrace();
+                }
+
+                RequestDispatcher dispatcher = request.getRequestDispatcher("editStudent.jsp");
+                dispatcher.forward(request,response);
+
                 break;
             default:
                 response.sendRedirect("all-students");
+                break;
         }
 
     }

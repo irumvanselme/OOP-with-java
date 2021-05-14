@@ -17,9 +17,16 @@ public class StudentController {
         return dao.getAll();
     }
 
+    public Student getById(int id) throws SQLException {
+        return dao.show(id);
+    }
+
     public int create(String firstName, String lastName, String gender, String email, String year, String className) throws SQLException {
         return dao.create(new Student(firstName, lastName, gender, email , year, className));
     }
 
-
+    public boolean delete(int id) throws SQLException {
+        Student student = new Student(id);
+        return dao.delete(student);
+    }
 }

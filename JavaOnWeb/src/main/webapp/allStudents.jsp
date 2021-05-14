@@ -46,8 +46,8 @@
                             <td><c:out value="${student.gender}" /></td>
                             <td><c:out value="${student.year}" /></td>
                             <td><c:out value="${student.className}" /></td>
-                            <td><a href="">Update</a></td>
-                            <td><a href="" class="text-danger">Delete</a></td>
+                            <td><a href="edit-student?id=${student.id}">Update</a></td>
+                            <td><a href="students?action=DELETE&id=${student.id}" class="text-danger">Delete</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>

@@ -11,6 +11,10 @@ public class Student {
 
     public Student(){}
 
+    public Student(int id){
+        this.id = id;
+    }
+
     public Student(String firstName, String lastName, String gender, String email, String year, String className) {
         this.firstName = firstName;
         this.lastName = lastName;
