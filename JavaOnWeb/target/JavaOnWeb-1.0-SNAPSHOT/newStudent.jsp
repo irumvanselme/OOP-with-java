@@ -11,9 +11,10 @@
     <title>New Student</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 </head>
-<body class="bg-light vh-100 pt-5">
+<body class="bg-light vh-100 pt-3">
 <div class="container">
-    <div class="card card-body">
+    <a href="index.jsp">Student Management system</a>
+    <div class="card card-body mt-3">
         <div class="d-flex justify-content-between align-items-baseline">
             <h1 class="mb-5">New Student</h1>
             <div>
@@ -25,27 +26,29 @@
                 <label for="first_name">First name</label>
                 <input id="first_name" name="first_name" type="text" class="form-control bg-light" required>
             </div>
-            <div class="mt-2">
+            <div class="mt-1">
                 <label for="last_name">Last name</label>
                 <input id="last_name" name="last_name" type="text" class="form-control bg-light" required>
             </div>
-            <div class="mt-2">
+            <div class="mt-1">
                 <label for="email">Email</label>
                 <input id="email" type="email" name="email" class="form-control bg-light" required>
             </div>
-            <div class="mt-2">
+            <div class="mt-1">
                 <label>Gender</label>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" value="Male" name="gender" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
-                        Male
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" value="Female" name="gender" id="defaultCheck2">
-                    <label class="form-check-label" for="defaultCheck2">
-                        Female
-                    </label>
+                <div class="d-flex">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="Male" name="gender" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check ml-5">
+                        <input class="form-check-input" type="radio" value="Female" name="gender" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">
+                            Female
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="mt-2">
