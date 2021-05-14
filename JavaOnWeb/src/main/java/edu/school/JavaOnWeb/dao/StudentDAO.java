@@ -79,7 +79,7 @@ public class StudentDAO {
     }
 
     public int update(Student student) throws SQLException {
-        PreparedStatement statement = connection.prepareStatement("UPDATE students SET last_name = ?, first_name = ?, gender = ?, email = ?, year = ?, class = ? WHERE id = ? )");
+        PreparedStatement statement = connection.prepareStatement("UPDATE students SET last_name = ?, first_name = ?, gender = ?, email = ?, year = ?, class = ? WHERE id = ?");
         statement.setString(2, student.getLastName());
         statement.setString(1, student.getFirstName());
         statement.setString(3, student.getGender());

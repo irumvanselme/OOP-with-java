@@ -23,7 +23,8 @@
                 <a href="new-student" class="ml-4">Create New</a>
             </div>
         </div>
-        <form action="students" method="post">
+        <form action="edit-student" method="post">
+            <input type="hidden" name="id" value="${student.id}">
             <div class="form-group">
                 <label for="first_name">First name</label>
                 <input id="first_name" name="first_name" type="text" class="form-control bg-light"
