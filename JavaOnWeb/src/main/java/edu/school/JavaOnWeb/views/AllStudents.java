@@ -5,6 +5,7 @@ import edu.school.JavaOnWeb.models.Student;
 
 import java.io.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,15 +23,16 @@ public class AllStudents extends HttpServlet {
         response.setContentType("text/html");
 
         StudentController controller = null;
+        List<Student> students = new ArrayList<>();
+
         try {
             controller = new StudentController();
-            List<Student> students = controller.getStudents();
-            for (Student student: students) {
-                System.out.println(student.getFirstName());
-            }
+            students = controller.getStudents();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        request.setAttribute("students", students);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("allStudents.jsp");
         dispatcher.forward(request,response);
