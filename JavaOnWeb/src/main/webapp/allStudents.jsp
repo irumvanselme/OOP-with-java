@@ -13,7 +13,8 @@
 </head>
 <body class="bg-light vh-100 pt-5">
     <div class="container">
-        <div class="card card-body">
+        <a href="index.jsp">Student Management system</a>
+        <div class="card card-body mt-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1 class="mb-5">All Students</h1>
                 <div>
