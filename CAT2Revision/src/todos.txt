@@ -1,0 +1,6 @@
+TODO: Object Oriented Programming
+TODO: Java and DBMS
+TODO: Java and Networking
+TODO: Generic Classes (Collections)
+TODO: Multithreading
+TODO: Synchronization

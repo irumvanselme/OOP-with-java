@@ -1,0 +1,91 @@
+package edu.rca.classb.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.HashSet;
+import java.util.Set;
+
+import edu.rca.classb.jdbc.model.Person;
+
+public class JdbcDemo {
+
+	static Set<Person> persons = null;
+
+	public static void main(String[] args) throws Exception {
+
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection connection = null;
+		Statement statement = null;
+		try {
+			// step 1 : creating a connection
+
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_db?characterEncoding=utf8",
+					"root", "MYSQLnpf2020.");
+			if (connection == null)
+				System.out.println(" Coonection failed!");
+			else
+				System.out.println("Succesifully connected!");
+
+			// step 2: Creating a stament
+
+			statement = connection.createStatement();
+//
+//		if(statement.execute("create table person(id int primary key auto_increment,first_name varchar(255),last_name varchar(255),gender varchar(255))"));
+//		System.out.println("Table successiffuly created!");
+			// Insertting in the db person table
+			statement.execute(
+					"insert into person(first_name,last_name,gender) values('Byukusenge 3','Kamana 3','male')");
+
+			System.out.println("Reading column indexes");
+			System.out.println("==================================");
+			ResultSet rs = statement.executeQuery("select * from person");
+			// reading by column indexes
+			persons = new HashSet<Person>();
+			while (rs.next()) {
+				System.out.println("inseterd person name is  :" + rs.getString(2) + " at 1 :" + rs.getInt(1));
+				persons.add(new Person(rs.getString(2), rs.getString(3), rs.getString(4)));
+			}
+			System.out.println("Reading column names");
+			System.out.println("==================================");
+
+			rs = statement.executeQuery("select * from person");
+			// reading by column names
+			while (rs.next())
+				System.out.println(
+						"inseterd person name is  :" + rs.getString("first_name") + " at 1 :" + rs.getInt("id"));
+
+			System.out.println("Checking id the collection is not empty ");
+			System.out.println("==================================");
+
+			for (Person p : persons)
+				System.out.println("Lats name :" + p.getLastName() + " gender :" + p.getGender());
+
+			rs = statement.executeQuery("select * from person");
+
+			// Working with meta data
+			System.out.println("Working with database meta data");
+
+			System.out.println("========================");
+			System.out.println("Database name :" + rs.getMetaData().getCatalogName(1));
+			System.out.println(" Table name :" + rs.getMetaData().getTableName(1));
+
+			for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+				System.out.println("Column class names :" + rs.getMetaData().getColumnClassName(i));
+				System.out.println("Column names :" + rs.getMetaData().getColumnName(i));
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null)
+
+				statement.close();
+			if (connection != null)
+				connection.close();
+		}
+
+	}
+
+}

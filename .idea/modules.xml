@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CAT2Revision/CAT2Revision.iml" filepath="$PROJECT_DIR$/CAT2Revision/CAT2Revision.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Collections/Collections.iml" filepath="$PROJECT_DIR$/Collections/Collections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GUI/GUI.iml" filepath="$PROJECT_DIR$/GUI/GUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Generic_Types/Generic_Types.iml" filepath="$PROJECT_DIR$/Generic_Types/Generic_Types.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaExam/JavaExam.iml" filepath="$PROJECT_DIR$/JavaExam/JavaExam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaOnWeb/JavaOnWeb.iml" filepath="$PROJECT_DIR$/JavaOnWeb/JavaOnWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaRevisionProject/JavaRevisionProject.iml" filepath="$PROJECT_DIR$/JavaRevisionProject/JavaRevisionProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiThreading/MultiThreading.iml" filepath="$PROJECT_DIR$/MultiThreading/MultiThreading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project/Project.iml" filepath="$PROJECT_DIR$/Project/Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Revision/Revision.iml" filepath="$PROJECT_DIR$/Revision/Revision.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SocketProgramming/SocketProgramming.iml" filepath="$PROJECT_DIR$/SocketProgramming/SocketProgramming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/code.iml" filepath="$PROJECT_DIR$/.idea/code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/database/database.iml" filepath="$PROJECT_DIR$/database/database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/presentation/presentation.iml" filepath="$PROJECT_DIR$/presentation/presentation.iml" />
+    </modules>
+  </component>
+</project>
